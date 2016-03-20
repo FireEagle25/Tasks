@@ -1,4 +1,5 @@
 package fiire_eagle.ru.tasks.Models;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,6 +35,10 @@ public class Task extends SugarRecord{
         this.description = description;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getTitle() {
         return title;
     }
@@ -44,6 +49,10 @@ public class Task extends SugarRecord{
 
     public String getDescription() {
         return description;
+    }
+
+    public Long getId() {
+        return this.id;
     }
 
     @Override
@@ -60,7 +69,6 @@ public class Task extends SugarRecord{
         date.setText(getDate());
         TextView description = (TextView) container.findViewById(R.id.task_description);
         description.setText(getDescription());
-
         return container;
     }
 

@@ -25,7 +25,7 @@ public class NewTask extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         title = (EditText) findViewById(R.id.title);
-        date = (EditText) findViewById(R.id.date);
+        //date = (EditText) findViewById(R.id.date);
         description = (EditText) findViewById(R.id.description);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);

@@ -4,5 +4,5 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="background">#ffffff</color>
-    <color name="taskColor">#96a5ff</color>
+    <color name="taskColor">#ffffff</color>
 </resources>

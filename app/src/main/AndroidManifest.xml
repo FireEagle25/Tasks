@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="fiire_eagle.ru.tasks">
+    package="fiire_eagle.ru.tasks" >
 
     <application
         android:name=".TasksApp"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/tasks_icon"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-
-        <meta-data android:name="DATABASE" android:value="tasksDB_02.db" />
-        <meta-data android:name="VERSION" android:value="1" />
-        <meta-data android:name="QUERY_LOG" android:value="true" />
-        <!--meta-data android:name="DOMAIN_PACKAGE_NAME" android:value="ru.fiire_eagle.tasks" /-->
+        android:theme="@style/AppTheme" >
+        <meta-data
+            android:name="DATABASE"
+            android:value="tasksDB_02.db" />
+        <meta-data
+            android:name="VERSION"
+            android:value="1" />
+        <meta-data
+            android:name="QUERY_LOG"
+            android:value="true" />
+        <!-- meta-data android:name="DOMAIN_PACKAGE_NAME" android:value="ru.fiire_eagle.tasks" / -->
 
         <activity
             android:name=".activites.AllTasks"
@@ -29,6 +34,8 @@
             android:name=".activites.NewTask"
             android:label="@string/title_activity_new_task"
             android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity android:name=".activites.TaskDetaily" >
         </activity>
     </application>
 

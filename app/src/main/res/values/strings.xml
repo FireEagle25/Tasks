@@ -95,4 +95,5 @@
     <string name="new_task_date_hint">Дата</string>
     <string name="new_task_description_hint">Описание</string>
     <string name="success_message">Задача успешно добавлена</string>
+    <string name="is_done">Выполнено</string>
 </resources>

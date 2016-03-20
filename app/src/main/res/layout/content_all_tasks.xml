@@ -8,20 +8,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AllTasks"
-    android:background="@color/background">
+    android:background="#00ffffff"
+    android:id="@+id/main_all_tasks_container">
 
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:fillViewport="false"
-        android:background="@color/background">
+        android:background="#00ffffff">
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:id="@+id/all_tasks_content"
-            android:background="@color/background">
+            android:background="#00ffffff">
         </LinearLayout>
     </ScrollView>
 
