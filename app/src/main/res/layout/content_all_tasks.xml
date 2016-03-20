@@ -16,11 +16,11 @@
         android:background="#00ff00">
 
         <LinearLayout
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:id="@+id/all_tasks_content"
-            android:background="#ff0000">
+            android:background="#000000">
         </LinearLayout>
     </ScrollView>
 

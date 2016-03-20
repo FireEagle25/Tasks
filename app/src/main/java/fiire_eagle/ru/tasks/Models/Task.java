@@ -1,4 +1,7 @@
 package fiire_eagle.ru.tasks.Models;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.List;
@@ -7,6 +10,7 @@ import com.orm.SugarApp;
 import com.orm.SugarRecord;
 import com.orm.query.Select;
 
+import fiire_eagle.ru.tasks.R;
 import fiire_eagle.ru.tasks.TasksApp;
 
 /**
@@ -15,9 +19,9 @@ import fiire_eagle.ru.tasks.TasksApp;
 
 public class Task extends SugarRecord{
     private Long id;
-    String title = null;
-    String date = null;
-    String description = null;
+    String title;
+    String date;
+    String description;
 
     public Task() {
         super();
@@ -47,21 +51,16 @@ public class Task extends SugarRecord{
         return title + " " + date + " " + description;
     }
 
-    public LinearLayout getView() {
-        LinearLayout container = new LinearLayout(TasksApp.getAppContext());
-        container.setOrientation(LinearLayout.VERTICAL);
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT);
-        container.setLayoutParams(params);
-        TextView title = new TextView(TasksApp.getAppContext());
+    public LinearLayout getView(LayoutInflater inflater) {
+        LinearLayout container = (LinearLayout)inflater.inflate(R.layout.task, null, false);
+        ViewGroup.LayoutParams container_params = container.getLayoutParams();
+        TextView title = (TextView) container.findViewById(R.id.task_title);
         title.setText(getTitle());
-        TextView date = new TextView(TasksApp.getAppContext());
+        TextView date = (TextView) container.findViewById(R.id.task_date);
         date.setText(getDate());
-        TextView description = new TextView(TasksApp.getAppContext());
-        date.setText(getDescription());
-        container.addView(title);
-        container.addView(date);
-        container.addView(description);
+        TextView description = (TextView) container.findViewById(R.id.task_description);
+        description.setText(getDescription());
+
         return container;
     }
 

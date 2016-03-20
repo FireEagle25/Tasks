@@ -45,7 +45,7 @@ public class AllTasks extends AppCompatActivity {
     protected void showAllTasks() {
         List<Task> allTasks = Task.getTasks();
         for(int i = 0; i < allTasks.size(); i++) {
-            LinearLayout a = allTasks.get(i).getView();
+            LinearLayout a = allTasks.get(i).getView(getLayoutInflater());
             content.addView(a);
         }
     }
