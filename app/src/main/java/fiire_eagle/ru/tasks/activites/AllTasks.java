@@ -33,7 +33,13 @@ public class AllTasks extends AppCompatActivity {
                 showNewTaskActivity();
             }
         });
+    }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if(content.getChildCount() > 0)
+            content.removeAllViews();
         showAllTasks();
     }
 

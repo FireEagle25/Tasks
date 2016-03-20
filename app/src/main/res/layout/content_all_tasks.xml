@@ -7,20 +7,21 @@
     tools:showIn="@layout/activity_all_tasks"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AllTasks">
+    tools:context=".AllTasks"
+    android:background="@color/background">
 
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:fillViewport="false"
-        android:background="#00ff00">
+        android:background="@color/background">
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:id="@+id/all_tasks_content"
-            android:background="#000000">
+            android:background="@color/background">
         </LinearLayout>
     </ScrollView>
 

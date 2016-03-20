@@ -4,20 +4,13 @@
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:minHeight="100dp"
-              android:background="#ff00ff"
+              android:background="@color/background"
               android:id="@+id/task_layout">
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#ffff00">
-        <shape>
-            <solid android:color="#EC6118"/>
-            <corners android:bottomRightRadius="0.1dp"
-                     android:bottomLeftRadius="7dip"
-                     android:topLeftRadius="7dip"
-                     android:topRightRadius="0.1dp"/>
-        </shape>
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/taskColor">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
