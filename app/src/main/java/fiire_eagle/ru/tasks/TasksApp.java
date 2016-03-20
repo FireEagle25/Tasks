@@ -22,7 +22,6 @@ public class TasksApp extends SugarApp {
         SugarContext.terminate();
     }
 
-
     public static Context getAppContext() {
         return TasksApp.context;
     }

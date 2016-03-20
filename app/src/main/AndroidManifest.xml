@@ -15,7 +15,7 @@
         <meta-data android:name="DATABASE" android:value="tasksDB_00.db" />
         <meta-data android:name="VERSION" android:value="1" />
         <meta-data android:name="QUERY_LOG" android:value="true" />
-        <meta-data android:name="DOMAIN_PACKAGE_NAME" android:value="ru.fiire_eagle.tasks.Models" />
+        <meta-data android:name="DOMAIN_PACKAGE_NAME" android:value="ru.fiire_eagle.tasks" />
 
         <activity
             android:name=".activites.AllTasks"

@@ -5,7 +5,6 @@ import android.widget.TextView;
 import java.util.List;
 
 import com.orm.SugarRecord;
-import com.orm.dsl.Table;
 import com.orm.query.Select;
 
 import fiire_eagle.ru.tasks.TasksApp;
@@ -14,12 +13,11 @@ import fiire_eagle.ru.tasks.TasksApp;
  * Created by FireEagle on 19.03.2016.
  */
 
-@Table
 public class Task extends SugarRecord{
     private Long id;
-    String title;
-    String date;
-    String description;
+    String title = null;
+    String date = null;
+    String description = null;
 
     public Task() {
         super();

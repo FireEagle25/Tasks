@@ -31,6 +31,8 @@ public class AllTasks extends AppCompatActivity {
             }
         });
 
+        //TODO Ошибка. Нет таблицы. И не создается.
+
         for(int i = 0; i < 10; i++) {
             try {
                 Task newTask = new Task("1", "2", "3");
