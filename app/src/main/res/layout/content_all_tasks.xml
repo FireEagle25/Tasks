@@ -10,9 +10,19 @@
     tools:context=".AllTasks">
 
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/all_tasks_content"></ScrollView>
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fillViewport="false"
+        android:background="#00ff00">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/all_tasks_content"
+            android:background="#ff0000">
+        </LinearLayout>
+    </ScrollView>
 
 
 </android.support.v4.widget.NestedScrollView>

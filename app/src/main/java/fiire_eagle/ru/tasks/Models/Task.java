@@ -1,9 +1,9 @@
 package fiire_eagle.ru.tasks.Models;
-import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.List;
 
+import com.orm.SugarApp;
 import com.orm.SugarRecord;
 import com.orm.query.Select;
 
@@ -25,7 +25,7 @@ public class Task extends SugarRecord{
 
     public Task(String title, String date, String description) {
         super();
-        this.title = description;
+        this.title = title;
         this.date = date;
         this.description = description;
     }
@@ -47,7 +47,7 @@ public class Task extends SugarRecord{
         return title + " " + date + " " + description;
     }
 
-    public View getView() {
+    public LinearLayout getView() {
         LinearLayout container = new LinearLayout(TasksApp.getAppContext());
         container.setOrientation(LinearLayout.VERTICAL);
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
@@ -57,8 +57,11 @@ public class Task extends SugarRecord{
         title.setText(getTitle());
         TextView date = new TextView(TasksApp.getAppContext());
         date.setText(getDate());
+        TextView description = new TextView(TasksApp.getAppContext());
+        date.setText(getDescription());
         container.addView(title);
         container.addView(date);
+        container.addView(description);
         return container;
     }
 
