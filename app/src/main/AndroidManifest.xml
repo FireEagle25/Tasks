@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="fiire_eagle.ru.tasks" >
+          xmlns:tools="http://schemas.android.com/tools"
+          package="fiire_eagle.ru.tasks">
 
     <application
+        android:name="com.orm.SugarApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme"
+        tools:replace="android:icon,android:theme,android:label">
+
+        <meta-data android:name="DATABASE" android:value="tasksDB_00.db" />
+        <meta-data android:name="VERSION" android:value="1" />
+        <meta-data android:name="QUERY_LOG" android:value="true" />
+        <meta-data android:name="DOMAIN_PACKAGE_NAME" android:value="ru.fiire_eagle.tasks.Models" />
+
         <activity
             android:name=".activites.AllTasks"
             android:label="@string/app_name"

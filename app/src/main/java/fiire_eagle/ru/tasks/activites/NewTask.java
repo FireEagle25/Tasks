@@ -1,7 +1,5 @@
 package fiire_eagle.ru.tasks.activites;
 
-import android.content.ContentValues;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -11,15 +9,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
-import fiire_eagle.ru.tasks.DB.DBHelper;
+import fiire_eagle.ru.tasks.Models.Task;
 import fiire_eagle.ru.tasks.R;
 
 public class NewTask extends AppCompatActivity {
     EditText title;
     EditText date;
     EditText description;
-
-    protected DBHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,21 +28,14 @@ public class NewTask extends AppCompatActivity {
         date = (EditText) findViewById(R.id.date);
         description = (EditText) findViewById(R.id.description);
 
-        dbHelper = new DBHelper(this);
-
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ContentValues cv = new ContentValues();
-
-                cv.put("description", description.getText().toString());
-                cv.put("title", title.getText().toString());
-                cv.put("date", date.getText().toString());
+                Task newTask = new Task(title.getText().toString(), date.getText().toString(), description.getText().toString());
+                newTask.save();
 
                 Log.d("DB", String.valueOf(R.string.success_message));
-                dbHelper.insert("tasks", cv);
-                SQLiteDatabase db = dbHelper.getWritableDatabase();
 
                 Snackbar.make(view, String.valueOf(R.string.success_message), Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();

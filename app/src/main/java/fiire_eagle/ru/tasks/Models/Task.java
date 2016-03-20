@@ -1,21 +1,32 @@
 package fiire_eagle.ru.tasks.Models;
-
-import android.app.Application;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import java.util.List;
+
+import com.orm.SugarRecord;
+import com.orm.dsl.Table;
+import com.orm.query.Select;
 
 import fiire_eagle.ru.tasks.TasksApp;
 
 /**
  * Created by FireEagle on 19.03.2016.
  */
-public class Task {
-    private String title;
-    private String date;
-    private String description;
 
-    Task(String title, String date, String description) {
+@Table
+public class Task extends SugarRecord{
+    private Long id;
+    String title;
+    String date;
+    String description;
+
+    public Task() {
+        super();
+    }
+
+    public Task(String title, String date, String description) {
+        super();
         this.title = description;
         this.date = date;
         this.description = description;
@@ -51,5 +62,9 @@ public class Task {
         container.addView(title);
         container.addView(date);
         return container;
+    }
+
+    public static List<Task> getTasks() {
+        return Select.from(Task.class).list();
     }
 }
