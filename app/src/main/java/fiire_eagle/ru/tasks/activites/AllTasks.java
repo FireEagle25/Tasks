@@ -1,6 +1,7 @@
 package fiire_eagle.ru.tasks.activites;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.content.ContextCompat;
@@ -56,8 +57,8 @@ public class AllTasks extends AppCompatActivity implements View.OnClickListener 
 
     protected void showAllTasks() {
         List<Task> allTasks = Task.getTasks();
-        int id = 0;
-        taskIdViewId = new HashMap<Integer, Long>();
+        int id;
+        taskIdViewId = new HashMap<>();
 
         if (allTasks.size() > 0) {
             id = allTasks.get(0).getView(getLayoutInflater()).getId();
@@ -75,9 +76,10 @@ public class AllTasks extends AppCompatActivity implements View.OnClickListener 
     }
 
     private void showNoTasksMessage() {
-        TextView message = new TextView(TasksApp.getAppContext());
+        /*TextView message = new TextView(TasksApp.getAppContext());
+        message.setTextColor(Color.DKGRAY);
         message.setText("У вас нет задач. Чтобы их добавить необходимо тапнуть на розую кнопку справа вверху");
-        content.addView(message);
+        content.addView(message);*/
     }
 
     @Override
