@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -16,6 +17,7 @@ import java.util.List;
 
 import fiire_eagle.ru.tasks.R;
 import fiire_eagle.ru.tasks.Models.*;
+import fiire_eagle.ru.tasks.TasksApp;
 
 public class AllTasks extends AppCompatActivity implements View.OnClickListener {
     protected LinearLayout content;
@@ -36,6 +38,7 @@ public class AllTasks extends AppCompatActivity implements View.OnClickListener 
                 showNewTaskActivity();
             }
         });
+        fab.setImageResource(R.drawable.ic_exposure_plus_1);
     }
 
     @Override
@@ -66,6 +69,15 @@ public class AllTasks extends AppCompatActivity implements View.OnClickListener 
                 content.addView(currTask);
             }
         }
+        else {
+            showNoTasksMessage();
+        }
+    }
+
+    private void showNoTasksMessage() {
+        TextView message = new TextView(TasksApp.getAppContext());
+        message.setText("У вас нет задач. Чтобы их добавить необходимо тапнуть на розую кнопку справа вверху");
+        content.addView(message);
     }
 
     @Override

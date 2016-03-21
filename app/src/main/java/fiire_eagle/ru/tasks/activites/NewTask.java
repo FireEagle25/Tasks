@@ -2,17 +2,17 @@ package fiire_eagle.ru.tasks.activites;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
-
+import com.codetroopers.betterpickers.calendardatepicker.CalendarDatePickerDialogFragment;
+import java.util.Calendar;
 import fiire_eagle.ru.tasks.Models.Task;
 import fiire_eagle.ru.tasks.R;
 
-public class NewTask extends AppCompatActivity {
+public class NewTask extends AppCompatActivity implements CalendarDatePickerDialogFragment.OnDateSetListener {
     EditText title;
     EditText date;
     EditText description;
@@ -25,23 +25,41 @@ public class NewTask extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         title = (EditText) findViewById(R.id.title);
-        //date = (EditText) findViewById(R.id.date);
+        date = (EditText) findViewById(R.id.date);
         description = (EditText) findViewById(R.id.description);
+        date.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(hasFocus)
+                    showDatePickerDialog();
+            }
+        });
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.add_task);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Task newTask = new Task(title.getText().toString(), date.getText().toString(), description.getText().toString());
                 newTask.save();
-
-                Log.d("DB", String.valueOf(R.string.success_message));
-
-                Snackbar.make(view, String.valueOf(R.string.success_message), Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
                 finish();
             }
         });
+
+        fab.setImageResource(R.drawable.ic_exposure_plus_1);
     }
 
+    public void showDatePickerDialog() {
+        CalendarDatePickerDialogFragment cdp = new CalendarDatePickerDialogFragment()
+                .setOnDateSetListener(NewTask.this)
+                .setFirstDayOfWeek(Calendar.MONDAY);
+        cdp.show(getSupportFragmentManager(), "");
+        description.requestFocus();
+    }
+
+    @Override
+    public void onDateSet(CalendarDatePickerDialogFragment dialog, int year, int monthOfYear, int dayOfMonth) {
+        date.setText(Integer.toString(dayOfMonth) + "." + Integer.toString(monthOfYear) + "." + Integer.toString(year));
+        description.requestFocus();
+    }
 }

@@ -25,5 +25,11 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.2.0'
     compile 'com.android.support:design:23.2.0'
+
+    //My dependencies
+
+    //ORM
     compile 'com.github.satyan:sugar:1.5'
+    //DatePickerDialog
+    compile 'com.code-troopers.betterpickers:library:2.5.2'
 }

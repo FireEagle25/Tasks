@@ -22,7 +22,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:id="@+id/all_tasks_content"
-            android:background="#00ffffff">
+            android:background="@color/colorPrimary">
         </LinearLayout>
     </ScrollView>
 
